@@ -20,7 +20,7 @@ jobs:
           git clone https://github.com/pillar-markup/pillar.git -b v8.3.1
           export PATH="$HOME/texlive/bin/x86_64-linux:$PWD/build:$PATH"
           TEXLIVE_RELEASE=2023 ./pillar/scripts/ci/install-texlive 
-          xargs tlmgr install ./_support/latex/sbabook/texlive-2023.deps
+          xargs tlmgr install | echo ./_support/latex/sbabook/texlive-2023.deps
           ./pillar/scripts/build.sh
           mkdir artifacts
           
