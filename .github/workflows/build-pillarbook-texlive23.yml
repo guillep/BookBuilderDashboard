@@ -22,7 +22,7 @@ jobs:
           echo "INSTALLING TEXLIVE"
           TEXLIVE_RELEASE=2023 ./pillar/scripts/ci/install-texlive 
           echo "INSTALLING SBA DEPENDENCIES"
-          echo ./_support/latex/sbabook/texlive-2023.deps | xargs tlmgr install
+          cat ./_support/latex/sbabook/texlive-2023.deps | xargs tlmgr install
           echo "BUILDING PILLAR IMAGE"
           ./pillar/scripts/build.sh
           mkdir artifacts
